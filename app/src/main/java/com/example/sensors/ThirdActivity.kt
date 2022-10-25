@@ -17,6 +17,7 @@ class ThirdActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var textX: TextView
     private  lateinit var textY: TextView
     private  lateinit var textZ: TextView
+
     private var sensorManager: SensorManager? = null
     private var sensor: Sensor? = null
     private var isAccelerometer = false
