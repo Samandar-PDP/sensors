@@ -24,7 +24,9 @@ class MainActivity : AppCompatActivity() {
             stringBuilder.append(sensor.name).append("\n")
         }
 
-        val isSensorAvailable = if (sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE) == null) "Not Available" else "Available"
+        //textView.text = stringBuilder.toString()
+
+        val isSensorAvailable = if (sensorManager.getDefaultSensor(Sensor.TYPE_GAME_ROTATION_VECTOR) == null) "Not Available" else "Available"
         textView.text = isSensorAvailable
     }
 }

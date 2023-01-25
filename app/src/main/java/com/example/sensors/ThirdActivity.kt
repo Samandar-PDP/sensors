@@ -38,13 +38,14 @@ class ThirdActivity : AppCompatActivity(), SensorEventListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third)
         textX = findViewById(R.id.textX)
-        textY = findViewById<TextView>(R.id.textY)
-        textZ = findViewById<TextView>(R.id.textZ)
+        textY = findViewById(R.id.textY)
+        textZ = findViewById(R.id.textZ)
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator
         if (sensorManager!!.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
             sensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
             isAccelerometer = true
+            textX.text = "Available"
         } else {
             textX.setText("ACCELEROMETER is not available")
             isAccelerometer = false
@@ -69,7 +70,7 @@ class ThirdActivity : AppCompatActivity(), SensorEventListener {
         currX = sensorEvent.values[0]
         currY = sensorEvent.values[1]
         currZ = sensorEvent.values[2]
-        textX!!.text = "$currX m/s2"
+        textX.text = "$currX m/s2"
         textY.setText(currY.toString() + " m/s2")
         textZ.setText(currZ.toString() + " m/s2")
         if (isNotFirstTime) {

@@ -33,6 +33,7 @@ class SecondActivity : AppCompatActivity(), SensorEventListener {
         if (sensorManager!!.getDefaultSensor(Sensor.TYPE_PROXIMITY) != null) {
             proximitySensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_PROXIMITY)
             isProximitySensorAvailable = true
+            textView.text = "Available"
         } else {
             textView.text = "Proximity sensor isn't available"
             isProximitySensorAvailable = false
